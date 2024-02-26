@@ -38,6 +38,7 @@ void print(vector<string> v) {
 int main() {
     print(100);    // int
     print('B');     //  character is always promoted to int should print 65 ASCII ('A')
+    print('A');     //  character is always promoted to int should print 65 ASCII ('A')
     
     print(123.5);   // double
     print(123.3F);  // Float is promoted to double
