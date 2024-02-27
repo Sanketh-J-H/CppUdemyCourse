@@ -5,6 +5,7 @@
 // No-args constructor
 Mystring::Mystring() 
     : str{nullptr} {
+    std::cout<<" No-args constructor\n";
     str = new char[1];
     *str = '\0';
 }
@@ -12,6 +13,7 @@ Mystring::Mystring()
 // Overloaded constructor
 Mystring::Mystring(const char *s) 
     : str {nullptr} {
+        std::cout<<"Overloaded Constructor \n";
         if (s==nullptr) {
             str = new char[1];
             *str = '\0';
@@ -53,7 +55,3 @@ void Mystring::display() const {
 // getters
  int Mystring::get_length() const { return strlen(str); }
  const char *Mystring::get_str() const { return str; }
-
-
-
-
