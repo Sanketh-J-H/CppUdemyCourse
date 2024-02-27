@@ -3,55 +3,63 @@
 #include "Mystring.h"
 
 // No-args constructor
-Mystring::Mystring() 
-    : str{nullptr} {
-    std::cout<<" No-args constructor\n";
+Mystring::Mystring()
+    : str{nullptr}
+{
+    std::cout << " No-args constructor\n";
     str = new char[1];
     *str = '\0';
 }
 
 // Overloaded constructor
-Mystring::Mystring(const char *s) 
-    : str {nullptr} {
-        std::cout<<"Overloaded Constructor \n";
-        if (s==nullptr) {
-            str = new char[1];
-            *str = '\0';
-        } else {
-            str = new char[std::strlen(s)+1];
-            std::strcpy(str, s);
-        }
+Mystring::Mystring(const char *s)
+    : str{nullptr}
+{
+    std::cout << "Overloaded Constructor \n";
+    if (s == nullptr)
+    {
+        str = new char[1];
+        *str = '\0';
+    }
+    else
+    {
+        str = new char[std::strlen(s) + 1];
+        std::strcpy(str, s);
+    }
 }
 
 // Copy constructor
-Mystring::Mystring(const Mystring &source) 
-    : str{nullptr} {
-        str = new char[std::strlen(source.str) + 1];
-        std::strcpy(str, source.str);
+Mystring::Mystring(const Mystring &source)
+    : str{nullptr}
+{
+    str = new char[std::strlen(source.str) + 1];
+    std::strcpy(str, source.str);
 }
 
 // Destructor
-Mystring::~Mystring() {
-    delete [] str;
+Mystring::~Mystring()
+{
+    delete[] str;
 }
 
 // Copy assignment
-Mystring &Mystring::operator=(const Mystring &rhs) {
+Mystring &Mystring::operator=(const Mystring &rhs)
+{
     std::cout << "Copy assignment" << std::endl;
     if (this == &rhs)
         return *this;
-    delete [] this->str;
+    delete[] this->str;
     str = new char[std::strlen(rhs.str) + 1];
     std::strcpy(this->str, rhs.str);
     return *this;
 }
 
-
 // Display method
-void Mystring::display() const {
+void Mystring::display() const
+{
     std::cout << str << " : " << get_length() << std::endl;
 }
 
 // getters
- int Mystring::get_length() const { return strlen(str); }
- const char *Mystring::get_str() const { return str; }
+int Mystring::get_length() const { return strlen(str); }
+const char *Mystring::get_str() const { return str; }
