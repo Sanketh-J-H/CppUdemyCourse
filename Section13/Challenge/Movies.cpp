@@ -37,7 +37,7 @@ Movies::~Movies()
 bool Movies::add_movie(std::string name, std::string rating, int watched)
 {
     // you implement this method
-    for (Movie &movie : movies)
+    for (auto &movie : movies)
     {
         if (movie.get_name() == name)
         {
@@ -63,7 +63,7 @@ bool Movies::add_movie(std::string name, std::string rating, int watched)
 bool Movies::increment_watched(std::string name)
 {
     // you implement this method
-    for (auto &movie : movies)
+    for (auto movie : movies)
     {
         if (movie.get_name() == name)
         {
