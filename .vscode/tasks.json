@@ -10,7 +10,7 @@
                 "-std=c++17",
                 "-g",
                 "${fileDirname}/main.cpp",
-                "${fileDirname}/Mystring.cpp",
+                // "${fileDirname}/Mystring.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
