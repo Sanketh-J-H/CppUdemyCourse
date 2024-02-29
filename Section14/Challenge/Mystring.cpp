@@ -100,3 +100,36 @@ std::istream &operator>>(std::istream &in, Mystring &rhs)
     delete[] buff;
     return in;
 }
+
+Mystring Mystring::operator+(const Mystring &rhs)
+{
+    char *buff = new char[(strlen(rhs.str) + strlen(this->str) +1)];
+    strcpy(buff,this->str);
+    strcat(buff,rhs.str);
+    Mystring temp{buff};
+    delete [] buff;
+    return temp; 
+}
+
+bool Mystring::operator==(const Mystring &rhs)
+{
+    std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
+    if(this->str == rhs.str)
+    {
+        std::cout << "Strings are equal." << std::endl; // Debugging output
+        return true;
+    }
+    std::cout << "Strings are not equal." << std::endl; // Debugging output
+    return false; // Explicitly return false if strings are not equal
+}
+
+
+bool Mystring::operator!=(const Mystring &rhs)
+{
+    if(this->str != rhs.str)
+    {
+        return true;
+    }
+    return false;
+}
+

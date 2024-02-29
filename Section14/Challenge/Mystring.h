@@ -17,6 +17,10 @@ public:
 
     Mystring &operator=(const Mystring &rhs); // Copy assignment
     Mystring &operator=(Mystring &&rhs);      // Move assignment
+    Mystring operator+(const Mystring &rhs);  //concatenate the passed string to this string
+    bool operator==(const Mystring &rhs);     //compare two objects string and return true or false
+    bool operator!=(const Mystring &rhs);     //Compare two Mystring objects and return true if not equal  
+    
 
     void display() const;
 
