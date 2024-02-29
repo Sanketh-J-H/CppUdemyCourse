@@ -113,20 +113,20 @@ Mystring Mystring::operator+(const Mystring &rhs)
 
 bool Mystring::operator==(const Mystring &rhs)
 {
-    std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
-    if(this->str == rhs.str)
+    //std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
+    if(strcmp(this->str , rhs.str) == 0)
     {
-        std::cout << "Strings are equal." << std::endl; // Debugging output
+        // std::cout << "Strings are equal." << std::endl; // Debugging output
         return true;
     }
-    std::cout << "Strings are not equal." << std::endl; // Debugging output
+    // std::cout << "Strings are not equal." << std::endl; // Debugging output
     return false; // Explicitly return false if strings are not equal
 }
 
 
 bool Mystring::operator!=(const Mystring &rhs)
 {
-    if(this->str != rhs.str)
+    if(strcmp(this->str , rhs.str) != 0)
     {
         return true;
     }
