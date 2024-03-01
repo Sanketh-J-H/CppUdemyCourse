@@ -151,14 +151,13 @@ bool Mystring::operator<(const Mystring &rhs)
 }
 
 Mystring Mystring::operator-()
-{	
+{
 	char *buff = new char[strlen(str) + 1];
-	for(size_t index{0} ; index < strlen(str) + 1; index += 1 )
-	{	
+	for (size_t index{0}; index < strlen(str) + 1; index += 1)
+	{
 		buff[index] = std::tolower(str[index]);
-	}	
+	}
 	Mystring temp{buff};
-	delete [] buff;
+	delete[] buff;
 	return temp;
-
 }
