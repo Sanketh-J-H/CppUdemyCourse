@@ -103,18 +103,18 @@ std::istream &operator>>(std::istream &in, Mystring &rhs)
 
 Mystring Mystring::operator+(const Mystring &rhs)
 {
-	char *buff = new char[(strlen(rhs.str) + strlen(this->str) +1)];
-	strcpy(buff,this->str);
-	strcat(buff,rhs.str);
+	char *buff = new char[(strlen(rhs.str) + strlen(this->str) + 1)];
+	strcpy(buff, this->str);
+	strcat(buff, rhs.str);
 	Mystring temp{buff};
-	delete [] buff;
-	return temp; 
+	delete[] buff;
+	return temp;
 }
 
 bool Mystring::operator==(const Mystring &rhs)
 {
-	//std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
-	if(strcmp(this->str , rhs.str) == 0)
+	// std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
+	if (strcmp(this->str, rhs.str) == 0)
 	{
 		// std::cout << "Strings are equal." << std::endl; // Debugging output
 		return true;
@@ -123,10 +123,9 @@ bool Mystring::operator==(const Mystring &rhs)
 	return false; // Explicitly return false if strings are not equal
 }
 
-
 bool Mystring::operator!=(const Mystring &rhs)
 {
-	if(strcmp(this->str , rhs.str) != 0)
+	if (strcmp(this->str, rhs.str) != 0)
 	{
 		return true;
 	}
@@ -135,18 +134,31 @@ bool Mystring::operator!=(const Mystring &rhs)
 
 bool Mystring::operator>(const Mystring &rhs)
 {
-	if(strcmp(this->str,rhs.str) > 0)
+	if (strcmp(this->str, rhs.str) > 0)
 	{
 		return true;
 	}
 	return false;
-}      
+}
 
 bool Mystring::operator<(const Mystring &rhs)
 {
-	if(strcmp(this->str,rhs.str) < 0)
+	if (strcmp(this->str, rhs.str) < 0)
 	{
 		return true;
 	}
 	return false;
+}
+
+Mystring Mystring::operator-()
+{	
+	char *buff = new char[strlen(str) + 1];
+	for(size_t index{0} ; index < strlen(str) + 1; index += 1 )
+	{	
+		buff[index] = std::tolower(str[index]);
+	}	
+	Mystring temp{buff};
+	delete [] buff;
+	return temp;
+
 }

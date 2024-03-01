@@ -21,9 +21,9 @@ int main()
     cout << (a < b) << endl;  // true
     cout << (a > b) << endl;  // false
 
-    // Mystring s1 {"FRANK"};
-    // s1 = -s1;
-    // cout << s1 << endl;               // frank
+    Mystring s1 {"FRANK"};
+    s1 = -s1;
+    cout << s1 << endl;               // frank
 
     // s1 = s1 + "*****";
     // cout << s1 << endl;               // frank*****
