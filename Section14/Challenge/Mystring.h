@@ -23,6 +23,7 @@ public:
     bool operator>(const Mystring &rhs);      // Compare two Mystring objects for greater than
     bool operator<(const Mystring &rhs);      // Compare two Mystring objects for less than
     Mystring operator-();  //convert to lowercase
+    void operator+=(const Mystring &rhs); // concatenate the given strings and store it in the lhs
 
     void display() const;
 

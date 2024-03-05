@@ -111,6 +111,12 @@ Mystring Mystring::operator+(const Mystring &rhs)
 	return temp;
 }
 
+ void Mystring::operator+=(const Mystring &rhs)
+ {
+	 *this = (*this).operator+(rhs);
+	
+ }
+
 bool Mystring::operator==(const Mystring &rhs)
 {
 	// std::cout << "Comparing strings: " << this->str << " and " << rhs.str << std::endl; // Debugging output
