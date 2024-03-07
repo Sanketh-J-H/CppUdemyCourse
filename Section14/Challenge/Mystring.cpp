@@ -167,3 +167,21 @@ Mystring Mystring::operator-()
 	delete[] buff;
 	return temp;
 }
+
+Mystring Mystring::operator*(const int &rhs)
+{
+	char *buff = new char[strlen(str)*rhs + 1 ]{'\0'};
+	for(size_t index{0}; index < rhs ; index += 1)
+	{
+		strcat(buff,str);
+	}
+	Mystring temp{buff};
+	delete [] buff;
+	return temp;
+}
+
+void Mystring::operator*=(const int &rhs)
+{
+	*this = *this * rhs; 	
+	// return *this;
+}

@@ -1,4 +1,4 @@
-    // Section 14
+// Section 14
 // Challenge
 #include <iostream>
 #include "Mystring.h"
@@ -31,13 +31,13 @@ int main()
     s1 += "-----"; // frank*****-----
     cout << s1 << endl;
 
-    // Mystring s2{"12345"};
-    // s1 = s2 * 3;
-    // cout << s1 << endl;              // 123451234512345
+    Mystring s2{"12345"};
+    s1 = s2 * 3;
+    cout << s1 << endl; // 123451234512345
 
-    // Mystring s3{"abcdef"};
-    // s3 *= 5;
-    // cout << s3 << endl;             // abcdefabcdefabcdefabcdefabcdef
+    Mystring s3{"abcdef"};
+    s3 *= 5;
+    cout << s3 << endl; // abcdefabcdefabcdefabcdefabcdef
 
     // Mystring s = "Frank";
     // ++s;

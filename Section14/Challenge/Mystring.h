@@ -24,7 +24,8 @@ public:
     bool operator<(const Mystring &rhs);      // Compare two Mystring objects for less than
     Mystring operator-();  //convert to lowercase
     void operator+=(const Mystring &rhs); // concatenate the given strings and store it in the lhs
-
+    Mystring operator*(const int &rhs);   // copy and concatenate the string the number of times given
+    void operator*=(const int &rhs);   // copy and concatenate the string the number of times given
     void display() const;
 
     int get_length() const; // getters
