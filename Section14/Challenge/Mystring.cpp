@@ -111,11 +111,10 @@ Mystring Mystring::operator+(const Mystring &rhs)
 	return temp;
 }
 
- void Mystring::operator+=(const Mystring &rhs)
- {
-	 *this = (*this).operator+(rhs);
-	
- }
+void Mystring::operator+=(const Mystring &rhs)
+{
+	*this = (*this).operator+(rhs);
+}
 
 bool Mystring::operator==(const Mystring &rhs)
 {
@@ -170,18 +169,38 @@ Mystring Mystring::operator-()
 
 Mystring Mystring::operator*(const int &rhs)
 {
-	char *buff = new char[strlen(str)*rhs + 1 ]{'\0'};
-	for(int index{0}; index < rhs ; index += 1)
+	char *buff = new char[strlen(str) * rhs + 1]{'\0'};
+	for (int index{0}; index < rhs; index += 1)
 	{
-		strcat(buff,str);
+		strcat(buff, str);
 	}
 	Mystring temp{buff};
-	delete [] buff;
+	delete[] buff;
 	return temp;
 }
 
 void Mystring::operator*=(const int &rhs)
 {
-	*this = *this * rhs; 	
+	*this = *this * rhs;
 	// return *this;
+}
+
+Mystring Mystring::operator++()
+{
+	size_t stringLength = strlen(str);
+	for (size_t index{0}; index < stringLength; index += 1)
+	{
+		str[index] = toupper(str[index]);
+	}
+	return *this;
+}
+
+Mystring Mystring::operator++(int)
+{
+	Mystring temp{str};
+	for (size_t index{0}; index < strlen(str) + 1; index += 1)
+	{
+		str[index] = toupper(str[index]);
+	}
+	return temp;
 }
