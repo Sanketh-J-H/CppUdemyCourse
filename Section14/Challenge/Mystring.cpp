@@ -171,7 +171,7 @@ Mystring Mystring::operator-()
 Mystring Mystring::operator*(const int &rhs)
 {
 	char *buff = new char[strlen(str)*rhs + 1 ]{'\0'};
-	for(size_t index{0}; index < rhs ; index += 1)
+	for(int index{0}; index < rhs ; index += 1)
 	{
 		strcat(buff,str);
 	}
