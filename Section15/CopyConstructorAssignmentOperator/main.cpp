@@ -73,9 +73,9 @@ public:
 
 int main()
 {
-    // Base b{100}; // Overloaded constructor
-    // Base b1{b};  // Copy constructor
-    // b = b1;      //   Copy assignment
+    Base b{100}; // Overloaded constructor
+    Base b1{b};  // Copy constructor
+    b = b1;      //   Copy assignment
 
     Derived d{100}; // Overloaded constructor
     Derived d1{d};  // Copy constructor
