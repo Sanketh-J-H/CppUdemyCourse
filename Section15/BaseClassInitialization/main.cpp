@@ -48,7 +48,7 @@ public:
 
 int main()
 {
-    Derived d;
-    // Derived d{1000};
+    // Derived d;
+    Derived d{1000};
     return 0;
 }
