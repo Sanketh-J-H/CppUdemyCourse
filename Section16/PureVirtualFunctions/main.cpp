@@ -79,12 +79,12 @@ int main()
     //    Shape s;
     //    Shape *p = new Shape();
 
-    //        Circle c;
-    //        c.draw();
+    // Circle c;
+    // c.draw();
 
-    //    Shape *ptr = new Circle();
-    //    ptr->draw();
-    //    ptr->rotate();
+    // Shape *ptr = new Circle();
+    // ptr->draw();
+    // ptr->rotate();
 
     Shape *s1 = new Circle();
     Shape *s2 = new Line();
@@ -92,8 +92,8 @@ int main()
 
     std::vector<Shape *> shapes{s1, s2, s3};
 
-    //    for (const auto p: shapes)
-    //        p->draw();
+    for (const auto p : shapes)
+        p->draw();
 
     screen_refresh(shapes);
 
