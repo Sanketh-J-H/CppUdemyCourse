@@ -44,6 +44,3 @@ Hints:
     - Start by making the Account class abstract by adding the pure virtual functions.
     
 Have fun!!  This is a very, very challenging exercise!
-   
-   
-    
