@@ -26,4 +26,3 @@ void Account::print(std::ostream &os) const  {
     os << std::fixed;
     os << "[Account: " << name << ": " << balance << "]";
 }
-
