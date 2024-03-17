@@ -38,5 +38,5 @@ void Savings_Account::print(std::ostream &os) const
 {
     os.precision();
     os << std::fixed;
-    os << "[Account: " << name << ": "<<balance <<"]";
+    os << "[Account: " << name << " :"<<balance <<" " << int_rate <<"]";
 }
