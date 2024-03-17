@@ -43,5 +43,9 @@ int main()
 
     display(accounts);
 
+    delete p1;
+    delete p2;
+    delete p3;
+
     return 0;
 }
