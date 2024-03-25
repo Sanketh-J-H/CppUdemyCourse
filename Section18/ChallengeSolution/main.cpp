@@ -39,4 +39,3 @@ int main() {
     std::cout << "Program completed successfully" << std::endl;
     return 0;
 }
-
