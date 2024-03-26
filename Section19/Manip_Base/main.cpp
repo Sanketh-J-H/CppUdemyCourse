@@ -4,23 +4,24 @@
 #include <iostream>
 #include <iomanip>
 
-int main() {
-    int num {255};
- 
+int main()
+{
+    int num{255};
+
     // Displaying using different bases
     std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << std::dec << num << std::endl;
     std::cout << std::hex << num << std::endl;
     std::cout << std::oct << num << std::endl;
-    
+
     // Displaying showing the base prefix for hex and oct
-        std::cout << "\n------------------------------------------------------------" << std::endl;
+    std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << std::showbase;
     std::cout << std::dec << num << std::endl;
     std::cout << std::hex << num << std::endl;
     std::cout << std::oct << num << std::endl;
-    
-     // Display the hex value in uppercase
+
+    // Display the hex value in uppercase
     std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << std::showbase << std::uppercase;
     std::cout << std::hex << num << std::endl;
@@ -31,7 +32,7 @@ int main() {
     std::cout << std::dec << num << std::endl;
     std::cout << std::hex << num << std::endl;
     std::cout << std::oct << num << std::endl;
-    
+
     // setting using the set method
     std::cout.setf(std::ios::showbase);
     std::cout.setf(std::ios::uppercase);
@@ -46,9 +47,9 @@ int main() {
     std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << "Enter an integer : ";
     std::cin >> num;
-    
+
     std::cout << "Decimal default  : " << num << std::endl;
-    
+
     std::cout << "Hexadecimal      : " << std::hex << num << std::endl;
     std::cout << "Hexadecimal      : " << std::hex << std::uppercase << num << std::endl;
     std::cout << "Hexadecimal      : " << std::hex  << num << std::endl;
@@ -57,8 +58,7 @@ int main() {
     std::cout << "Octal            : " << std::oct << num << std::endl;
     std::cout << "Hexadecimal      : " << std::hex << std::showbase << num << std::endl;
     std::cout << "Octal            : " << std::oct << num << std::endl;
-    
+
     std::cout << std::endl << std::endl;
     return 0;
 }
-
