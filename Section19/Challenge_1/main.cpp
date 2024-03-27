@@ -6,6 +6,11 @@
 #include <vector>
 #include <string>
 
+void ruler()
+{
+    std::cout << "\n1234567890123456789012345678901234567890123456789012345678901234567890" << std::endl;
+}
+
 struct City
 {
     std::string name;
@@ -51,17 +56,32 @@ int main()
                     {"Argentina", {{"Buenos Aires", 3010000, 723.77}}},
                 }};
 
+    // Print ruler
+    ruler();
     // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
+    std::cout << std::setw(49) << tours.title << std::endl;
+
+    std::cout << "\n"
+              << std::setw(20) << std::left << "Country"
+              << std::setw(20) << std::left << "City"
+              << std::setw(20) << std::right << "Population"
+              << std::setw(10) << std::right << "Price";
+
+    std::cout << "\n----------------------------------------------------------------------" << std::endl;
+
     for (auto country : tours.countries)
     { // loop through the countries
-        std::cout << country.name << std::endl;
+        int i = 0;
+
         for (auto city : country.cities)
         { // loop through the cities for each country
-            std::cout << "\t" << city.name
-                      << "\t" << city.population
-                      << "\t" << city.cost
+            std::cout << std::setw(20) << std::left << (( i == 0) ? country.name : "")
+                      << std::setw(20) << std::left << city.name
+                      << std::setw(20) << std::right << city.population
+                      << std::setw(10) << std::right << city.cost
                       << std::endl;
+
+            i += 1;
         }
     }
 
