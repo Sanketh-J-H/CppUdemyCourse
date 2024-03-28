@@ -4,16 +4,19 @@
 #include <iostream>
 #include <fstream>
 
-int main() {
+int main()
+{
     std::ifstream in_file;
-    in_file.open("../poem.txt");
-    if (!in_file) {
+    in_file.open("poem.txt");
+    if (!in_file)
+    {
         std::cerr << "Problem opening file" << std::endl;
         return 1;
     }
 
-    char c {};
-    while (in_file.get(c)) {
+    char c{};
+    while (in_file.get(c))
+    {
         std::cout << c;
     }
     std::cout << std::endl;
