@@ -23,7 +23,7 @@ int main()
     cout << setw(30) << setfill('-') << "" << endl;
 
     ifstream in_file;
-    string word;
+    string stdAns{}, name{}, reply{};
     int score{0};
 
     in_file.open("responses.txt");
@@ -32,11 +32,25 @@ int main()
         cerr << "Problem opening file" << endl;
         return 1;
     }
-    while (in_file >> word)
+
+    in_file >> stdAns;
+    cout << setfill(' ') ;
+
+    while (in_file >> name >> reply)
     {
-        cout << setw(15) << left << left << word
+        for (long unsigned int len{0}; len < stdAns.size(); len += 1)
+        {
+
+            if (stdAns[len] == reply[len])
+            {
+                score += 1;
+            }
+        }
+
+        cout << setw(15) << left << name
              << setw(15) << right << score
              << endl;
+        score = 0;
     }
     in_file.close();
 
