@@ -30,6 +30,3 @@ Enter the substring to search for: Frank
 The substring Frank was found 0 times
 
 Have fun!
-
-
-
