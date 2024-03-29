@@ -35,11 +35,17 @@ int main()
                 break;
             }
 
-            auto fileWordSubstring = fileWord.substr(index, userStringLength);
-            if (fileWordSubstring == userString)
+            // auto fileWordSubstring = fileWord.substr(index, userStringLength);
+            // if (fileWordSubstring == userString)
+            // {
+            //     matchCount += 1;
+            //     std::cout << fileWord << "\t ";
+            // }
+            auto found = fileWord.find(userString);
+            if ( found != string::npos)
             {
                 matchCount += 1;
-                std::cout << fileWord << "\t ";
+                std::cout << fileWord << "\t";
             }
         }
     }
