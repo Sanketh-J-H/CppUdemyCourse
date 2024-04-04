@@ -50,5 +50,6 @@
         "list": "cpp",
         "map": "cpp",
         "set": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/g++"
 }
