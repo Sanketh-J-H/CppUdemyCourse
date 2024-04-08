@@ -38,7 +38,3 @@ Please use a deque to solve the problem.
 
 If you need a hint, please as in the Q/A.
 Good luck and have fun!
-
-
-
-

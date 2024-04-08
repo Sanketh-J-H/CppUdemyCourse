@@ -8,11 +8,32 @@
 #include <vector>
 #include <iomanip>
 
-bool is_palindrome(const std::string& s)
+bool is_palindrome(const std::string &s)
 {
     // You must implement this function.
     // Since we are learning the STL - use a deque to solve the problem.
-    return false;
+    std::deque<char>  d1 , d2 ;
+
+
+    for (const auto &elem : s)
+    {
+        if(std::isalpha(elem) )
+        {
+            d1.push_front(std::toupper(elem));
+            d2.push_back(std::toupper(elem));
+        }
+    }
+
+
+    if(d1 == d2)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+        
 }
 
 int main()
