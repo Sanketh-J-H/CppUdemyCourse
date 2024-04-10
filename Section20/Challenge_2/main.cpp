@@ -67,8 +67,8 @@ void play_current_song(const Song &song)
 {
     // This function should display
     // Playing: followed by the song that is playing
-
-    std::cout << "You implement this function" << std::endl;
+    std::cout << "\nPlaying :" << std::endl;
+    std::cout << song << std::endl;
 }
 
 void display_playlist(const std::list<Song> &playlist, const Song &current_song)
@@ -82,7 +82,7 @@ void display_playlist(const std::list<Song> &playlist, const Song &current_song)
     }
 
     std::cout << "\nCurrent Song : \n"
-              << current_song 
+              << current_song
               << std::endl;
 }
 
@@ -104,19 +104,40 @@ int main()
     char choice{};
     do
     {
-        
-        std::cout<<"\nF - Play First Song"
-                 <<"\nN - Play Next Song"
-                 <<"\nP - Play Previous Song"
-                 <<"\nA - Add and play new song at current location"
-                 <<"\nL - List the current playlist"
-                 <<"\n============================================="
-                 <<"\nEnter a selection(Q to quit): ";
-        std::cin>>choice;
 
-    } while (std::isalpha(choice));
-    
-
+        display_menu();
+        std::cin.get(choice);
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        choice = std::toupper(choice);
+        if (choice == 'F')
+        {
+            std::cout<<"\nPlaying First Song";
+            current_song = playlist.begin();
+            play_current_song(*current_song);
+        }
+        else if (choice == 'N')
+        {
+        }
+        else if (choice == 'P')
+        {
+        }
+        else if (choice == 'A')
+        {
+        }
+        else if (choice == 'L')
+        {
+            display_playlist(playlist, *current_song);
+        }
+        else if (choice == 'Q')
+        {
+            std::cout << "Quitting\n";
+        }
+        else
+        {
+            std::cout<<"Illegal choice , Try again ...\n ";
+        }
+    } while (choice != 'Q');
 
     std::cout << "\nThanks for listening!" << std::endl;
     return 0;
