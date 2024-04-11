@@ -106,24 +106,50 @@ int main()
     {
 
         display_menu();
-        std::cin.get(choice);
+        std::cin >> choice;
+        choice = std::toupper(choice);
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        choice = std::toupper(choice);
+
         if (choice == 'F')
         {
-            std::cout<<"\nPlaying First Song";
+            std::cout << "\nPlaying First Song";
             current_song = playlist.begin();
             play_current_song(*current_song);
         }
         else if (choice == 'N')
         {
+            std::cout << "\nPlaying Next Song.";
+            ++current_song;
+            if (current_song == playlist.end())
+            {
+                current_song = playlist.begin();
+            }
+            play_current_song(*current_song);
         }
         else if (choice == 'P')
         {
+            std::cout << "\n Playing Previous Song.";
+            if (current_song == playlist.begin())
+            {
+                current_song = playlist.end();
+            }
+            --current_song;
+            play_current_song(*current_song);
         }
         else if (choice == 'A')
         {
+            std::string song_name{}, artist_name{};
+            unsigned short int rating{0};
+            std::cout << "\nAdding and playing a new song."
+                      << "\nEnter song name:";
+            std::cin >> song_name;
+            std::cout << "\nEnter song artist:";
+            std::cin >> artist_name;
+            std::cout << "\nEnter your rating (1-5):";
+            std::cin >> rating;
+            current_song = playlist.emplace(current_song, song_name, artist_name, rating);
+            play_current_song(*current_song);
         }
         else if (choice == 'L')
         {
@@ -135,7 +161,7 @@ int main()
         }
         else
         {
-            std::cout<<"Illegal choice , Try again ...\n ";
+            std::cout << "Illegal choice , Try again ...\n ";
         }
     } while (choice != 'Q');
 
