@@ -106,8 +106,8 @@ void part2()
             lineNo += 1;
 
             // Create stringstream object
-            std::istringstream iss(line);
-            while (iss >> word)
+            std::stringstream ss(line);
+            while (ss >> word)
             {
 
                 word = clean_string(word);
