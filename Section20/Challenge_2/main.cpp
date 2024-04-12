@@ -76,7 +76,7 @@ void display_playlist(const std::list<Song> &playlist, const Song &current_song)
     // This function should display the current playlist
     // and then the current song playing.
 
-    for (auto song : playlist)
+    for (auto &song : playlist)
     {
         std::cout << song << std::endl;
     }
